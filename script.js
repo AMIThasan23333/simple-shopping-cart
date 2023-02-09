@@ -28,15 +28,23 @@ function updateCaseNumber(isIncrease){
 
 
 
-document.getElementById('btn-case-plus').addEventListener('click', function(){
-
-    const newCaseNumber = updateCaseNumber(true);
-
+function updateCseTotalNumber(newCaseNumber){
     const caseTotlaPrice = newCaseNumber * 59;
 
     const caseTotalElement = document.getElementById('case-total')
 
     caseTotalElement.innerText =caseTotlaPrice;
+
+}
+
+
+
+
+document.getElementById('btn-case-plus').addEventListener('click', function(){
+
+    const newCaseNumber = updateCaseNumber(true);
+
+  updateCseTotalNumber(newCaseNumber)
 
 
 })
@@ -45,8 +53,9 @@ document.getElementById('btn-case-plus').addEventListener('click', function(){
 document.getElementById("btn-case-minus").addEventListener('click', function(){
 
 
-    updateCaseNumber(false)
+   const newCaseNumber = updateCaseNumber(false)
 
+    updateCseTotalNumber(newCaseNumber);
 
 
 
