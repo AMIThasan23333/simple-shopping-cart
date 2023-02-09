@@ -18,6 +18,10 @@ function updateCaseNumber(isIncrease){
 
 
     caseNumberField.value = newCaseNumber;
+    return newCaseNumber;
+
+
+
 
 
 }
@@ -26,8 +30,15 @@ function updateCaseNumber(isIncrease){
 
 document.getElementById('btn-case-plus').addEventListener('click', function(){
 
+    const newCaseNumber = updateCaseNumber(true);
 
-    updateCaseNumber(true)
+    const caseTotlaPrice = newCaseNumber * 59;
+
+    const caseTotalElement = document.getElementById('case-total')
+
+    caseTotalElement.innerText =caseTotlaPrice;
+
+
 })
 
 
